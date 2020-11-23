@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from 'react-bootstrap/Card';
 import axios from "axios";
 import Columns from 'react-columns';
-import { Route, Router, Switch } from "react-router-dom";
+import './pays.css';
 import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
 function Pays() {
 
@@ -34,63 +34,48 @@ function Pays() {
 
 
     const countries = filterCountries.map((data, i) => {
-
-
         return (
+            <div className="container" col-md-4>
+                <Card key={i}
+                    bg="secondary"
+                    text="white"
+                    style={{ width: '18rem' }}>
+                    <Card.Header>
+                        <Card.Title>       {data.country}    </Card.Title>
+                        <Card.Img variant="top" style={{ padding: '5px', width: '5rem' }} variant="top" src={data.countryInfo.flag} /></Card.Header>
+                    <Card.Body>
+
+                        <Card.Text>
+                            Cas confirmés: {data.cases}
+                        </Card.Text >
+                        <Card.Text>
+                            Cas confirmés aujourd'hui : {data.todayCases}
+                        </Card.Text>
+                        <Card.Text>
+                            Guérisons : {data.recovered}
+                        </Card.Text>
+                        <Card.Text>
+                            Actifs : {data.active}
+                        </Card.Text>
+                        <Card.Text>
+                            État critique : {data.critical}
+                        </Card.Text>
+                        <Card.Text>
+                            Population : {data.population}
+                        </Card.Text>
+                        <Card.Text>
+                            Continent : {data.continent}
+                        </Card.Text>
+
+                    </Card.Body>
+                </Card>
+                <br />
 
 
-            <Card
-                key={i}
-                bg="light"
-                text="dark"
-                className="text-center"
-                border="primary"
-                style={{ width: '26rem', margin: "10px" }}
 
-
-            >
-
-                <Card.Body >
-
-                    <Card.Title>
-                        {data.country}
-                    </Card.Title>
-
-                    <Card.Img style={{ width: '15rem' }} variant="top" src={data.countryInfo.flag} />
-
-
-                    <Card.Text>
-                        Cas confirmés: {data.cases}
-                    </Card.Text >
-                    <Card.Text>
-                        Cas confirmés aujourd'hui : {data.todayCases}
-                    </Card.Text>
-                    <Card.Text>
-                        Guérisons : {data.recovered}
-                    </Card.Text>
-                    <Card.Text>
-                        Actifs : {data.active}
-                    </Card.Text>
-                    <Card.Text>
-                        État critique : {data.critical}
-                    </Card.Text>
-                    <Card.Text>
-                        Population : {data.population}
-                    </Card.Text>
-                    <Card.Text>
-                        Continent : {data.continent}
-                    </Card.Text>
-
-
-                </Card.Body >
-            </Card >
-
-
+            </div>
         )
-
-
     })
-
 
 
     var queries = [{
@@ -102,7 +87,6 @@ function Pays() {
     }];
 
     return (
-
         <div>
             <Navbar Navbar Navbar bg="dark" variant="dark" >
 
@@ -116,14 +100,7 @@ function Pays() {
                 </Columns>
             </div>
 
-
         </div>
-
-
-
-
-
-
     )
 
 }

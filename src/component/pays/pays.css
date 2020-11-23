@@ -1,3 +1,28 @@
 .recherche {
   text-align: center;
 }
+.container {
+  padding-right: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text {
+  overflow: hidden;
+  width: 50%;
+  max-width: 70em;
+  margin: auto;
+  border: 10px #f0f0ff;
+  box-shadow: 0 0.25em 0.5em #ccc, inset 0 0 1em 0.25em #000;
+}
+
+@media only screen and (max-width: 770px) {
+  .container {
+    margin: 0 10%;
+  }
+
+  .image {
+    width: 100%;
+  }
+}

@@ -10,14 +10,23 @@ body {
 }
 
 .image {
-  width: 370px;
+  width: 240px;
   margin-top: 50px;
   animation-duration: 2s;
   animation-name: clignoter;
   animation-iteration-count: infinite;
   transition: none;
 }
-.text {
+
+.pieChart {
+  margin: 2px;
+  float: right;
+  width: 600px;
+  height: 400px;
+  text-align: center;
+}
+
+text {
   overflow: hidden;
   width: 50%;
   max-width: 70em;
