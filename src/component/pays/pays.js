@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import axios from "axios";
 import Columns from 'react-columns';
 import './pays.css';
-import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
+import { Navbar, Form } from "react-bootstrap";
 function Pays() {
 
     const [results, setResults] = useState([]);
@@ -22,9 +22,6 @@ function Pays() {
             })
     }, []);
 
-
-
-
     const filterCountries = results.filter((item) => {
         return searchCountries !== ""
             ? item.country.toLowerCase().includes(searchCountries.toLowerCase())
@@ -42,7 +39,7 @@ function Pays() {
                     style={{ width: '18rem' }}>
                     <Card.Header>
                         <Card.Title>       {data.country}    </Card.Title>
-                        <Card.Img variant="top" style={{ padding: '5px', width: '5rem' }} variant="top" src={data.countryInfo.flag} /></Card.Header>
+                        <Card.Img style={{ padding: '5px', width: '5rem' }} variant="top" src={data.countryInfo.flag} /></Card.Header>
                     <Card.Body>
 
                         <Card.Text>
@@ -70,9 +67,6 @@ function Pays() {
                     </Card.Body>
                 </Card>
                 <br />
-
-
-
             </div>
         )
     })
@@ -88,17 +82,20 @@ function Pays() {
 
     return (
         <div>
-            <Navbar Navbar Navbar bg="dark" variant="dark" >
+            <br />
+            <div class="box">
+                <div class="container-4">
+                    <input type="search" id="search" placeholder="Rechercher un pays..." onChange={(e => setSearchCountries(e.target.value))} />
+                </div>
+            </div>
 
-                <Form inline>
-                    <Form.Control style={{ align: 'center', width: '20rem', margin: "10px" }} type="text" placeholder="Rechercher un pays" onChange={(e => setSearchCountries(e.target.value))} />
-                </Form>
-            </Navbar >
+            <br />
             <div>
                 <Columns queries={queries}>
                     {countries}
                 </Columns>
             </div>
+
 
         </div>
     )

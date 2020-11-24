@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 import axios from "axios";
 import image from "../../images/covid.png";
-import { Bar } from "react-chartjs-2";
 import './accueil.css';
 import { CanvasJSChart } from 'canvasjs-react-charts';
 const Accueil = () => {
@@ -83,7 +81,6 @@ const Accueil = () => {
         }]
     }
 
-
     return (
 
         <div className="container">
@@ -153,9 +150,8 @@ const Accueil = () => {
 
             </div>
 
-
-
         </div >
+
     )
 }
 export default Accueil;
