@@ -3,7 +3,6 @@ import Card from 'react-bootstrap/Card';
 import axios from "axios";
 import Columns from 'react-columns';
 import './pays.css';
-import { Navbar, Form } from "react-bootstrap";
 function Pays() {
 
     const [results, setResults] = useState([]);
