@@ -6,7 +6,6 @@ import { Route, Redirect, Switch, useLocation } from "react-router-dom";
 import Accueil from "./component/accueil/Accueil";
 import Pays from "./component/pays/pays";
 import Map from "./component/map/map";
-import Contact from "./component/contact/contact";
 import { Navbar, Nav } from "react-bootstrap";
 
 
